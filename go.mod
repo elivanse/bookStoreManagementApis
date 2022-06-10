@@ -1,4 +1,4 @@
-module bookStoreManagementApis
+module github.com/elivanse/bookStoreManagementApis
 
 go 1.18
 

@@ -1,14 +1,14 @@
 package controllers
 
 import (
-	"bookStoreManagementApis/pkg/models"
 	"encoding/json"
 	"fmt"
+	"github.com/elivanse/bookStoreManagementApis/pkg/models"
+
 	"net/http"
 	"strconv"
 
-	"github.com/akhil/go-bookstore/pkg/models"
-	"github.com/akhil/go-bookstore/pkg/utils"
+	"github.com/elivanse/bookStoreManagementApis/pkg/utils"
 	"github.com/gorilla/mux"
 	"golang.org/x/tools/go/analysis/passes/nilness"
 )

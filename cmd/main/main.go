@@ -1,9 +1,9 @@
 package main
 
 import (
+	"github.com/elivanse/bookStoreManagementApis/pkg/routes"
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm/dialects/mysql"
-	"home/ivanse/dev/bookStoreManagementApis/pkg/routes"
 	"log"
 	"net/http"
 )
