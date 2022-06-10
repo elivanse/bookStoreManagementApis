@@ -3,19 +3,17 @@ package controllers
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/elivanse/bookStoreManagementApis/pkg/models"
-
 	"net/http"
 	"strconv"
 
+	"github.com/elivanse/bookStoreManagementApis/pkg/models"
 	"github.com/elivanse/bookStoreManagementApis/pkg/utils"
 	"github.com/gorilla/mux"
-	"golang.org/x/tools/go/analysis/passes/nilness"
 )
 
 var NewBook models.Book
 
-func GetBook(w http.Response, r *http.Request) {
+func GetBook(w http.ResponseWriter, r *http.Request) {
 	newBooks := models.GetAllBooks()
 	res, _ := json.Marshal(newBooks)
 	w.Header().Set("Content-Type", "pkglication/json")
@@ -26,7 +24,7 @@ func GetBook(w http.Response, r *http.Request) {
 func GetBookById(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	bookId := vars["bookId"]
-	ID, err := srtconv.ParseInt(bookId, 0, 0)
+	ID, err := strconv.ParseInt(bookId, 0, 0)
 	if err != nil {
 		fmt.Println("error while parsing")
 	}
@@ -47,7 +45,7 @@ func CreateBook(w http.ResponseWriter, r *http.Request) {
 }
 
 func DeleteBook(w http.ResponseWriter, r *http.Request) {
-	vars := mux.vars(r)
+	vars := mux.Vars(r)
 	bookId := vars["bookId"]
 	ID, err := strconv.ParseInt(bookId, 0, 0)
 	if err != nil {
@@ -62,7 +60,7 @@ func DeleteBook(w http.ResponseWriter, r *http.Request) {
 
 func UpdateBook(w http.ResponseWriter, r *http.Request) {
 	var updateBook = &models.Book{}
-	utils.Parse(r, updateBook)
+	utils.ParseBody(r, updateBook)
 	vars := mux.Vars(r)
 	bookId := vars["bookId"]
 	ID, err := strconv.ParseInt(bookId, 0, 0)
@@ -83,5 +81,5 @@ func UpdateBook(w http.ResponseWriter, r *http.Request) {
 	res, _ := json.Marshal(bookDetails)
 	w.Header().Set("Content-Type", "pkglication/json")
 	w.WriteHeader(http.StatusOK)
-	w.Header(res)
+	w.Write(res)
 }
