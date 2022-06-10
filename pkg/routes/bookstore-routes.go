@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"github.com/elivanse/bookStoreManagementApis/pkg/controllers"
+	"bookStoreManagementApis/pkg/controllers"
 	"github.com/gorilla/mux"
 )
 
