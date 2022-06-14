@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/elivanse/bookStoreManagementApis/pkg/routes"
+	"github.com/AkhilSharma90/Golang-MySQL-CRUD-Bookstore-Management-API/tree/master/pkg/routes"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"

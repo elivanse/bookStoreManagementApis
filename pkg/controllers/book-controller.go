@@ -3,12 +3,11 @@ package controllers
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/AkhilSharma90/Golang-MySQL-CRUD-Bookstore-Management-API/blob/master/pkg/models"
+	"github.com/AkhilSharma90/Golang-MySQL-CRUD-Bookstore-Management-API/blob/master/pkg/utils"
+	"github.com/gorilla/mux"
 	"net/http"
 	"strconv"
-
-	"github.com/elivanse/bookStoreManagementApis/pkg/models"
-	"github.com/elivanse/bookStoreManagementApis/pkg/utils"
-	"github.com/gorilla/mux"
 )
 
 var NewBook models.Book
